@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACE-Core | Anti-Conformity Engine</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="assets/logo.png" alt="ACE Logo">
+            <span class="logo-text">ACE-CORE</span>
+        </div>
+        <nav id="main-nav">
+            <button data-view="dashboard" class="active">Dashboard</button>
+            <button data-view="audit">Comfort Audit</button>
+            <button data-view="friction">Friction Injection</button>
+            <button data-view="contentment">Contentment OS</button>
+        </nav>
+        <div id="wp-stat" style="font-weight: 800; color: var(--accent-color);">WP: <span id="nav-wp-value">0</span></div>
+    </header>
+
+    <main id="app-container">
+        <!-- Dashboard View -->
+        <section id="dashboard" class="view active">
+            <div id="willpower-meter">
+                <div class="pulse-ring"></div>
+                <div id="wp-value">0</div>
+            </div>
+            <h2 style="text-align: center; margin-bottom: 40px;">Resistance State: <span id="resistance-label">Dormant</span></h2>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div class="card">
+                    <h3>Active Challenges</h3>
+                    <div id="active-challenges-list">
+                        <p style="color: var(--text-secondary); font-style: italic;">No active friction detected. Systematic uyuşukluk imminent.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Recent Audits</h3>
+                    <div id="recent-audits-list">
+                        <p style="color: var(--text-secondary); font-style: italic;">Memory bank empty. Establish baseline.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Audit View -->
+        <section id="audit" class="view">
+            <h1>Comfort Audit</h1>
+            <p style="margin-bottom: 30px; color: var(--text-secondary);">Identify where the system is numbing your willpower.</p>
+            
+            <div class="card">
+                <form id="audit-form">
+                    <div class="form-group">
+                        <label>Category</label>
+                        <select id="audit-category" style="width: 100%; background: #111; border: 1px solid var(--border-color); padding: 12px; color: white;">
+                            <option value="nutrition">Nutrition / Instant Delivery</option>
+                            <option value="digital">Digital / Algorithmic Consumption</option>
+                            <option value="physical">Physical / Movement Avoidance</option>
+                            <option value="social">Social / Superficial Connection</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Behavior Description</label>
+                        <textarea id="audit-desc" placeholder="What easy choice weakened your resolve today?" rows="4"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Severity (1-10)</label>
+                        <input type="range" id="audit-severity" min="1" max="10" value="5" style="width: 100%; accent-color: var(--accent-color);">
+                    </div>
+                    <button type="submit" class="btn-primary">Log Weakness</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Friction View -->
+        <section id="friction" class="view">
+            <h1>The Forge</h1>
+            <p style="margin-bottom: 30px; color: var(--text-secondary);">Inject intentional hardships to strengthen your 'willpower muscle'.</p>
+            
+            <div id="challenge-generator" style="margin-bottom: 40px;">
+                <button id="generate-challenge-btn" class="btn-primary">Generate Friction Protocol</button>
+            </div>
+
+            <div id="available-challenges" class="grid-display">
+                <!-- Challenges will be injected here -->
+            </div>
+        </section>
+
+        <!-- Contentment View -->
+        <section id="contentment" class="view">
+            <h1>Contentment OS</h1>
+            <p style="margin-bottom: 30px; color: var(--text-secondary);">Sufficiency Filter: Hack the 'Endless Growth' desire.</p>
+            
+            <div class="card">
+                <h3>Consumption Filter</h3>
+                <div class="form-group">
+                    <label>Item / Desire</label>
+                    <input type="text" id="desire-input" placeholder="What does the system want you to want?">
+                </div>
+                <div style="display: flex; gap: 10px;">
+                    <button id="filter-need" class="btn-outline">Essential Need</button>
+                    <button id="filter-want" class="btn-primary">Manufactured Want</button>
+                </div>
+                <div id="filter-result" style="margin-top: 20px; font-weight: 700;"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer style="padding: 20px 40px; border-top: 1px solid var(--border-color); font-size: 0.7rem; color: var(--text-secondary); text-align: center;">
+        ACE-CORE v1.0 | ANTI-CONFORMITY ENGINE | RESIST THE FRICTIONLESS LIFE
+    </footer>
+
+    <script src="app.js" type="module"></script>
+</body>
+</html>
